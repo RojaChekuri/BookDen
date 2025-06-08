@@ -1,0 +1,477 @@
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  background-image: url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1470&q=80");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  user-select: none;
+  padding-top: 40px;
+  padding-bottom: 24px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 7rem;
+}
+
+.hero-title {
+  line-height: 1.5;
+  /* Optional: letter and word spacing for headline */
+  letter-spacing: 0.12em;
+  word-spacing: 0.16em;
+  font-size: 3rem;
+}
+
+.hero-subtitle {
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  word-spacing: 0.16em;
+  margin-bottom: 2em; /* ensures paragraph spacing >= 2x font size */
+  font-size: 1.1rem;
+}
+
+.search-input-container {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgb(0 0 0 / 0.1);
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 8px;
+  box-sizing: border-box;
+}
+
+.search-input {
+  padding: 12px;
+  width: 100%;
+  border: none;
+}
+
+.clear-button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-left: 4px;
+  color: #333;
+}
+
+.v-tab {
+  border-bottom: 0;
+}
+
+.v-label {
+  font-size: 1rem;
+}
+
+/* BookCard styles */
+.book-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+}
+
+.book-card__image-container {
+  height: 180px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+
+.book-card__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  user-select: none;
+  
+}
+
+.book-card__body {
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.book-card__title {
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.book-card__subtitle {
+  margin-bottom: 8px;
+}
+
+.book-card__star {
+  cursor: pointer;
+  margin-left: 8px;
+  vertical-align: middle;
+  color: #888;
+}
+
+.book-card__star--favorite {
+  color: #FFD700; /* gold */
+}
+
+.add-edit-form-wrapper {
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1470&q=80");
+  background-size: cover;
+  background-position: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.add-edit-form-surface {
+  width: 100%;
+  max-width: 700px;
+  padding: 32px;
+  border-radius: 8px;
+  margin-top: 2rem;
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.1);
+}
+
+.add-edit-form-title {
+  margin-bottom: 2px;
+  font-size: 1.5rem;
+}
+
+.description-textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border-color: #ccc;
+  resize: vertical;
+}
+
+.book-cover-image {
+  max-width: 20%;
+  max-height: 150px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.upload-progress {
+  margin-bottom: 8px;
+}
+
+.form-actions {
+  justify-content: flex-start;
+}
+
+.confirm-dialog__content {
+  width: 480px;
+  max-width: 90vw;
+  padding: 16px 24px;
+  box-sizing: border-box;
+}
+
+.confirm-dialog__header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.confirm-dialog__description {
+  font-size: 1.125rem;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.confirm-dialog__button-row {
+  justify-content: flex-start;
+  margin-top: 8px;
+}
+
+.confirm-dialog__button {
+  min-width: 110px;
+}
+
+/* Navbar container styles */
+.navbar {
+  width: 100%;
+  padding: 0 24px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0052cc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.transparent {
+  position: absolute;
+  background-color: transparent;
+  box-shadow: none;
+  z-index: 10;
+}
+
+/* Menu link styles */
+.menu-link {
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+  padding: 6px 12px;
+  display: inline-block;
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-weight: normal;
+  margin-bottom: 0;
+  box-shadow: none;
+  transition: background-color 0.2s ease;
+}
+
+.menu-link.active {
+  border-bottom: 3px solid #ffd700; /* yellow underline */
+  font-weight: bold;
+  box-shadow: none;
+}
+
+.menu-link.active.home-transparent {
+  background-color: transparent;
+  color: white;
+  margin-bottom: -3px;
+}
+
+.menu-link.active.scrolled {
+  background-color: #003e8a;
+  color: white;
+  margin-bottom: -3px;
+}
+
+/* Mobile menu background */
+.mobile-menu {
+  background-color: #0052cc;
+}
+
+/* Logo link styles */
+.logo-link {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+/* Logo text */
+.logo-text {
+  color: white;
+  font-weight: 700;
+  margin-left: 8px;
+  font-size: 1.8rem;
+}
+
+/* Button icon color override */
+.button-icon-white {
+  color: white;
+}
+
+.floating-tooltip-wrapper {
+  display: inline-block;
+  display: inline-block; /* keep inline-block for span wrapper */
+  justify-content: center; /* utility vJustifyContent=center */
+  display: flex; /* utility vFlex */
+}
+
+.floating-tooltip-popup {
+  position: absolute; /* will be overridden by JS, but default safe */
+  width: fit-content;
+  z-index: 9999;
+}
+
+.book-details-wrapper {
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 24px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-details-surface {
+  width: 100%;
+  max-width: 80%;
+  padding: 32px;
+  margin: '0 auto';
+  border-radius: 8px;
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.1);
+}
+
+.book-title {
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.book-title-favorite {
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.book-title-favorite .loading-progress {
+  margin-left: 4px;
+}
+
+.book-image-card {
+  max-width: 240px;
+  max-height: 360px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.book-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-section {
+  margin-bottom: 24px;
+}
+
+.book-description {
+  white-space: pre-wrap;
+}
+
+.book-actions {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.loading-center {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorites-container {
+  padding: 32px;
+}
+
+.favorites-heading {
+  /* You can style <h1> globally or add styles here */
+}
+
+.favorites-error {
+  color: red;
+  margin-bottom: 16px;
+}
+
+.favorites-empty {
+  margin-top: 24px;
+  color: #666;
+}
+
+.favorites-grid {
+  display: grid;
+  margin-top: 5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.favorites-loading {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.home-main {
+  padding: 32px;
+}
+
+.home-error {
+  color: red;
+}
+
+.home-books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.home-loading {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.home-no-more {
+  margin-top: 24px;
+  color: #666;
+}
+
+.back-to-top-button {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  border: 1.5px solid #0040d0;
+  background-color: white;
+  color: #0040d0;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.back-to-top-button:hover,
+.back-to-top-button:focus {
+  background-color: #0040d0;
+  color: white;
+  outline: none;
+}
+
