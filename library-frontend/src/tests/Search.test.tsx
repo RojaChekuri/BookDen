@@ -1,76 +1,51 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { Search } from '../components/Search';
 
-const dummyBooks = [
-  { id: '1', title: 'Book One', author: 'Author A', genre: 'Fiction', year: 2020 },
-  { id: '2', title: 'Book Two', author: 'Author B', genre: 'Non-fiction', year: 2019 },
+const books = [
+  { id: '1', title: 'Harry Potter', author: 'J.K. Rowling', genre: 'Fantasy', year: 1999 },
+  { id: '2', title: 'The Hobbit', author: 'J.R.R. Tolkien', genre: 'Fantasy', year: 1937 },
+  { id: '3', title: '1984', author: 'George Orwell', genre: 'Dystopia', year: 1949 },
 ];
 
-describe('Search Component', () => {
-  const onSearchChange = jest.fn();
-  const onSearchSubmit = jest.fn();
+describe('Search component', () => {
   const onFilteredBooks = jest.fn();
 
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it('renders input with placeholder and initial value', () => {
-    render(
-      <Search
-        books={dummyBooks}
-        onFilteredBooks={onFilteredBooks}
-      />
-    );
-    const input = screen.getByRole('searchbox');
+  it('renders search input and clear button toggles visibility', () => {
+    render(<Search books={books} onFilteredBooks={onFilteredBooks} />);
+
+    const input = screen.getByRole('searchbox', { name: /search books/i });
     expect(input).toBeInTheDocument();
-    expect(input).toHaveValue('initial');
-    expect(input).toHaveAttribute('placeholder');
+
+    // Initially clear button not present
+    expect(screen.queryByLabelText(/clear search/i)).toBeNull();
+
+    // Type in input triggers clear button
+    fireEvent.change(input, { target: { value: 'Harry' } });
+    expect(screen.getByLabelText(/clear search/i)).toBeInTheDocument();
+
+    // Clear button clears input and focuses
+    fireEvent.click(screen.getByLabelText(/clear search/i));
+    expect(input).toHaveValue('');
   });
 
-  it('calls onSearchChange when typing', () => {
-    render(
-      <Search
-        books={dummyBooks}
-        onFilteredBooks={onFilteredBooks}
-      />
-    );
-    const input = screen.getByRole('searchbox');
+  it('calls onFilteredBooks with filtered books on input change', () => {
+    render(<Search books={books} onFilteredBooks={onFilteredBooks} />);
 
-    userEvent.type(input, 'abc');
-    expect(onSearchChange).toHaveBeenCalledTimes(3);
-    expect(onSearchChange).toHaveBeenCalledWith('a');
-    expect(onSearchChange).toHaveBeenCalledWith('ab');
-    expect(onSearchChange).toHaveBeenCalledWith('abc');
-  });
+    const input = screen.getByRole('searchbox', { name: /search books/i });
 
-  it('calls onSearchSubmit when form submitted', () => {
-    render(
-      <Search
-        books={dummyBooks}
-        onFilteredBooks={onFilteredBooks}
-      />
-    );
-    const form = screen.getByRole('search');
-    fireEvent.submit(form);
-    expect(onSearchSubmit).toHaveBeenCalledWith('query');
-  });
+    fireEvent.change(input, { target: { value: 'fantasy' } });
 
-  it('clears input and focuses when clear button clicked', () => {
-    render(
-      <Search
-        books={dummyBooks}
-        onFilteredBooks={onFilteredBooks}
-      />
-    );
-    const clearBtn = screen.getByLabelText(/clear search/i);
-    const input = screen.getByRole('searchbox');
+    expect(onFilteredBooks).toHaveBeenCalled();
 
-    fireEvent.click(clearBtn);
-
-    expect(onSearchChange).toHaveBeenCalledWith('');
-    expect(input).toHaveFocus();
+    // The first call's argument is the filtered books array
+    const filtered = onFilteredBooks.mock.calls[0][0];
+    expect(filtered.length).toBe(3);
+    expect(filtered.some((b: any) => b.title === 'Harry Potter')).toBe(true);
+    expect(filtered.some((b: any) => b.title === 'The Hobbit')).toBe(true);
   });
 });

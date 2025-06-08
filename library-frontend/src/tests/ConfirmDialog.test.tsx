@@ -9,6 +9,7 @@ describe('ConfirmDialog', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
+  
 
   it('renders title and description', () => {
     render(

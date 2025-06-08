@@ -21,6 +21,7 @@ describe('BookCard Component', () => {
     isFavorite: false,
     toggleFavorite: jest.fn(),
   };
+  
 
   beforeEach(() => {
     jest.clearAllMocks();
