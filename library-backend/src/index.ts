@@ -352,6 +352,11 @@ app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
   res.status(500).json({ error: err.message || 'Internal server error' });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+export default app;
+// Start server only if this file is run directly (not imported)
+if (require.main === module) {
+  const server = app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
+

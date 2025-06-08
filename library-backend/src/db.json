@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "title": "Harry Potter and the Prisoner of Azkaban",
+    "author": "J.K. Rowling",
+    "year": 1999,
+    "genre": "Fantasy",
+    "description": "A magical adventure.",
+    "imageUrl": "",
+    "favorite": false,
+    "timestamp": "2025-06-08T21:10:59.348Z"
+  },
+  {
+    "id": "2",
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "year": 1937,
+    "genre": "Fantasy",
+    "description": "A classic tale.",
+    "imageUrl": "",
+    "favorite": true,
+    "timestamp": "2025-06-08T21:10:59.348Z"
+  },
+  {
+    "id": "3",
+    "title": "Adventures in Wonderland",
+    "author": "Lewis Carroll",
+    "year": 1865,
+    "genre": "Adventure",
+    "description": "A whimsical story.",
+    "imageUrl": "",
+    "favorite": false,
+    "timestamp": "2025-06-08T21:10:59.348Z"
+  }
+]
