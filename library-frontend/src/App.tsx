@@ -9,6 +9,7 @@ import { BookDetailsView } from "./views/BookDetailsView";
 import { EditBookView } from "./views/EditBookView";
 import { FavoritesView } from "./views/FavoritesView";
 import { Home } from "./views/Home";
+import { DefaultFooter } from "./components/Footer";
 
 const App: React.FC = () => {
   const error = useBooksStore((state) => state.error);
@@ -17,8 +18,8 @@ const App: React.FC = () => {
   const setSuccessMessage = useBooksStore((state) => state.setSuccessMessage);
 
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+      <div className="app-container">
         <NavBar />
         {error && (
           <BannerToast
@@ -34,15 +35,18 @@ const App: React.FC = () => {
             onClose={() => setSuccessMessage(null)}
           />
         )}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/favorites" element={<FavoritesView />} />
-          <Route path="/add-book" element={<AddBookView />} />
-          <Route path="/books/:id/edit" element={<EditBookView />} />
-          <Route path="/books/:id" element={<BookDetailsView />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+        <main className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/favorites" element={<FavoritesView />} />
+            <Route path="/add-book" element={<AddBookView />} />
+            <Route path="/books/:id/edit" element={<EditBookView />} />
+            <Route path="/books/:id" element={<BookDetailsView />} />
+          </Routes>
+        </main>
+        <DefaultFooter />
+      </div>
+    </BrowserRouter>
   );
 };
 

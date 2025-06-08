@@ -10,7 +10,7 @@ import { Book } from './types';
 const app = express();
 const PORT = 4000;
 const DB_PATH = path.resolve(__dirname, '../db.json');
-const UPLOADS_DIR = path.resolve(__dirname, '../uploads');
+const UPLOADS_DIR = path.resolve(__dirname, '../src/uploads');
 
 if (!fs.existsSync(UPLOADS_DIR)) {
   fs.mkdirSync(UPLOADS_DIR);

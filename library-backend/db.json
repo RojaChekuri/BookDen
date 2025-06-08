@@ -40,8 +40,8 @@
     "genre": "Fantasy",
     "description": "Mistborn: The Final Empire is the first book in Brandon Sanderson’s Mistborn series. It follows Vin, a street urchin who discovers she has powerful Allomantic abilities—magic fueled by metals. In a world ruled by the immortal Lord Ruler, Vin joins a group of rebels plotting to overthrow the oppressive regime. The book explores themes of trust, power, and rebellion, while delivering a unique magic system and unpredictable plot twists. Sanderson’s intricate world-building, combined with rich characters and intense action, makes this novel a standout in modern fantasy literature.",
     "imageUrl": "/uploads/7.jpeg",
-    "timestamp": "2025-06-08T18:20:41.648Z",
-    "favorite": false
+    "favorite": true,
+    "timestamp": "2025-06-08T20:34:59.775Z"
   },
   {
     "id": "8",
@@ -66,17 +66,6 @@
     "favorite": true
   },
   {
-    "id": "10",
-    "title": "1985",
-    "author": "George Orwell",
-    "year": 1949,
-    "genre": "Dystopian",
-    "description": "George Orwell’s 1984 is a chilling dystopian novel set in a totalitarian future where the Party, led by Big Brother, exercises complete control over society. The protagonist, Winston Smith, struggles with oppression, constant surveillance, and the manipulation of truth. The novel explores themes of censorship, propaganda, and the loss of individual freedom. Orwell’s stark vision of a bleak future warns of the dangers of authoritarianism and remains profoundly relevant in discussions about privacy and government power.",
-    "imageUrl": "/uploads/10.jpeg",
-    "favorite": false,
-    "timestamp": "2025-06-08T18:45:29.781Z"
-  },
-  {
     "id": "11",
     "title": "The Handmaid’s Tale",
     "author": "Margaret Atwood",
@@ -84,7 +73,8 @@
     "genre": "Dystopian",
     "description": "The Handmaid’s Tale by Margaret Atwood depicts a dystopian society called Gilead, where a theocratic regime has stripped women of their rights. The story follows Offred, a woman forced into sexual servitude to bear children for the ruling class. Themes of power, gender oppression, and resistance permeate the novel. Atwood’s compelling narrative and haunting vision challenge readers to consider issues of autonomy and authoritarianism, making the book a landmark feminist and dystopian work.",
     "imageUrl": "/uploads/11.png",
-    "timestamp": "2025-06-08T18:35:29.172Z"
+    "timestamp": "2025-06-08T18:35:29.172Z",
+    "favorite": true
   },
   {
     "id": "12",
@@ -94,8 +84,8 @@
     "genre": "Dystopian",
     "description": "Aldous Huxley’s Brave New World imagines a future society where humans are genetically engineered and conditioned to maintain social stability. The novel critiques consumerism, loss of individuality, and the use of technology to control populations. Through characters like Bernard Marx and John the Savage, Huxley explores the conflict between freedom and happiness in a tightly controlled world. The book remains a powerful commentary on modern society and technological ethics.",
     "imageUrl": "/uploads/12.jpeg",
-    "favorite": false,
-    "timestamp": "2025-06-08T18:45:39.756Z"
+    "favorite": true,
+    "timestamp": "2025-06-08T20:35:06.226Z"
   },
   {
     "id": "13",
@@ -481,16 +471,5 @@
     "imageUrl": "/uploads/3.jpeg",
     "timestamp": "2025-06-08T00:00:00Z",
     "favorite": false
-  },
-  {
-    "id": "46",
-    "title": "VFVGFDG",
-    "author": "GFDGDFG",
-    "year": 1234,
-    "genre": "Adventure",
-    "description": "FDF",
-    "imageUrl": "/uploads/image-1749404207262-201049336.png",
-    "favorite": false,
-    "timestamp": "2025-06-08T00:00:00Z"
   }
 ]

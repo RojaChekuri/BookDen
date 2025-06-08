@@ -1,4 +1,27 @@
 
+/* Ensure full height on root elements */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+/* Flex container to push footer down */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
+}
+
+/* Content grows to fill available space */
+.content {
+  flex: 1 0 auto;
+}
+
+/* Footer should not shrink */
+footer {
+  flex-shrink: 0;
+}
+
 .hero-section {
   position: relative;
   width: 100%;
@@ -135,9 +158,19 @@
   color: #FFD700; /* gold */
 }
 
+.book-card {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+  z-index: 10; /* To make sure it appears above other elements */
+}
+
 .add-edit-form-wrapper {
-  min-height: 100vh;
-  width: 100vw;
+  min-height: 95vh;
+  max-width: 100vw;
   background-image: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1470&q=80");
   background-size: cover;
   background-position: center;
@@ -437,10 +470,26 @@
   gap: 24px;
 }
 
+
+.cards-container {
+  position: relative; /* establishes positioning context */
+}
+
 .home-loading {
-  margin-top: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Optional: overlay effect */
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+  border-radius: 8px;
+
+  z-index: 10; /* above the cards */
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .home-no-more {
