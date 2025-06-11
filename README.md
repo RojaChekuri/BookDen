@@ -24,6 +24,7 @@ A modern, full-stack web application for managing a personal book collection. Th
 
 - **Frontend:** React, TypeScript, Zustand  
 - **Backend:** Node.js, Express, Multer (file uploads), Sharp (image processing)  
+- **Design System:** The UI is built using the **Visa Design System** library, ensuring consistent, modern, and accessible user interface components.
 - **Caching:** In-memory caching for image assets (NodeCache)  
 - **Security:** CSP, HSTS, COOP, X-Frame-Options headers  
 - **Others:** ESLint, Prettier, Git for version control  
